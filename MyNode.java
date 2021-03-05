@@ -1,19 +1,28 @@
 package javapractice;
+public class MyNode<K> implements INode<K> {
+    private INode next;
 
-
-public class MyNode<Key> {
-    private MyNode next;
-
-    private MyNode Key; {
-        this.Key = getNext().Key;
+    private K Key;
+    public  MyNode(K key){
+        this.Key = key;
         this.next = null;
     }
 
-    public MyNode getNext() {
+    @Override
+    public K getKey() {
+        return Key;
+    }
+
+    @Override
+    public void SetKey(K Key) {
+        this.Key = Key;
+    }
+
+    public INode getNext() {
         return next;
     }
 
-    public void setNext(MyNode next) {
+    public void setNext(INode next) {
         this.next = next;
     }
 }
